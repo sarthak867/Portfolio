@@ -17,7 +17,7 @@ back to `index.html`.
 
 ## Cloudflare Pages
 
-Recommended first deploy path:
+Recommended first deploy path if the Pages UI is available:
 
 1. Push the project to GitHub.
 2. Cloudflare Dashboard > Workers & Pages > Create application > Pages.
@@ -34,6 +34,22 @@ Node version: 22
 
 5. Add the EmailJS variables below under Settings > Environment variables.
 6. Deploy.
+
+If Cloudflare shows the newer Workers deploy form instead, use this:
+
+```txt
+Project name: portfolio
+Build command: npm run build
+Deploy command: npx wrangler deploy
+Builds for non-production branches: off, unless you want preview deploys
+Non-production branch deploy command: blank, or leave default
+Path: /
+API token: Create new token
+API token name: portfolio-deploy-token
+```
+
+This repo includes `wrangler.jsonc`, so `npx wrangler deploy` uploads the static
+Vite build from `dist/client` and serves React routes with SPA fallback.
 
 ## EmailJS
 
