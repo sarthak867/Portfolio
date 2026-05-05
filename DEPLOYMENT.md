@@ -12,8 +12,8 @@ Publish/output directory: dist/client
 Node version: 22
 ```
 
-`netlify.toml` and `public/_redirects` are included so client-side routes fall
-back to `index.html`.
+`netlify.toml` is included so Netlify client-side routes fall back to
+`index.html`. Cloudflare Workers uses `wrangler.jsonc` for the same SPA fallback.
 
 ## Cloudflare Pages
 
